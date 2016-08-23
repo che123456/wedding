@@ -1,0 +1,48 @@
+<!--<ion-view view-title="欢迎来到车车婚纱摄影"id="tour-view" hide-nav-bar="true">
+    <ion-nav-buttons side="left" >
+        <a class="button button-icon ion-navicon" menu-toggle="left"></a>
+    </ion-nav-buttons>
+    <ion-content>
+        <ion-slide-box on-slide-changed="onSlideChanged()">
+            <ion-slide>
+                <div class="box"><img src="images/tour5.jpg"/><p>重庆车车婚纱摄影，唯美，温馨的婚纱照片，让您的婚纱照如客照一样幸福浪漫</p></div>
+                
+            </ion-slide>
+            <ion-slide>
+                <div class="box"><img src="images/tour2.jpg"/><p>重庆车车婚纱摄影，唯美，温馨的婚纱照片，让您的婚纱照如客照一样幸福浪漫</p></div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box" style="position: relative"><img src="images/tour3.jpg"/><a class="button tour-button" ui-sref="home" ng-if="isShow">立即进入</a></div>
+            </ion-slide>
+        </ion-slide-box>
+    </ion-content>
+</ion-view>-->
+<ion-view hide-nav-bar="true">
+    <!--使用ionContent来正确地定位ionScroll-->
+    <ion-content>
+        <ion-scroll direction="y" paging="true" ng-style="{width:getWidth(),height:getHeight()}">
+            <!--给定一个div，这个div的宽度，就是app的宽度；高度为所有页面的高度之和-->
+            <div ng-style="{height:getTotalHeight()}">
+                <!--page 1 : 第个页面的高度和宽度都和ionScroll一样 -->
+                <div class="scroll-page" ng-style="{width:getWidth(),height:getHeight()}">
+                    <!--使用一个header bar，像一个subheader-->
+                    <!--使用has-header来定位这个页面的内容-->
+                     <div class="box"><img src="images/tour5.jpg"/></div>
+
+                    <!--// 提示箭头-->
+                    <span class="icon ion-chevron-up arror" ng-style="{left:getArrorLeft(),top:getArrorTop()}"></span>
+                </div>
+
+                <!--page 2-->
+                <div class="scroll-page" ng-style="{width:getWidth(),height:getHeight()}">
+                    <div class="box"><img src="images/tour2.jpg"/></div>
+                </div>
+
+                <!--page 3-->
+                <div class="scroll-page" ng-style="{width:getWidth(),height:getHeight()}">
+                    <div class="box" style="position: relative"><img src="images/tour3.jpg"/><a class="button tour-button" ui-sref="home">立即进入</a></div>
+                </div>
+            </div>
+        </ion-scroll>
+    </ion-content>
+</ion-view>
